@@ -1,4 +1,6 @@
-// Login
+// ==========================================
+// 1. LOGIN FORM LOGIC (Unchanged)
+// ==========================================
 const loginForm = document.getElementById("loginForm");
 const errorMessage = document.getElementById("errorMessage");
 
@@ -23,19 +25,24 @@ if (loginForm) {
     });
 }
 
-// Dashboard
+// ==========================================
+// 2. DASHBOARD LOGOUT MODAL (Dynamic Creation with Body Class)
+// ==========================================
 const logoutBtn = document.getElementById("logoutBtn");
 
 if (logoutBtn) {
     logoutBtn.addEventListener("click", function(e) {
         e.preventDefault();
 
-        // 1. Create the modal background wrapper on the fly
+        // 1. Replicate the ticket: Add "popup-configuration" class to the <body>
+        document.body.className = "popup-configuration";
+
+        // 2. Create the modal background wrapper on the fly
         const logoutModal = document.createElement('div');
         logoutModal.id = 'logoutModal';
         logoutModal.className = 'modal'; 
 
-        // 2. Inject the modal template
+        // 3. Inject the modal template
         logoutModal.innerHTML = `
             <div class="modal-content">
                 <h3>Log Out?</h3>
@@ -47,15 +54,19 @@ if (logoutBtn) {
             </div>
         `;
 
-        // 3. Mount it to the webpage DOM
+        // 4. Mount it to the webpage DOM
         document.body.appendChild(logoutModal);
 
-        // 4. Scope selectors directly inside the freshly built modal
+        // 5. Scope selectors directly inside the freshly built modal
         const cancelBtn = logoutModal.querySelector('#cancelBtn');
         const confirmBtn = logoutModal.querySelector('#confirmBtn');
 
-        // Helper cleanup function to drop it from the DOM completely
+        // Helper cleanup function
         const destroyModal = () => {
+            // Replicate the ticket: Reset the body class back to empty
+            document.body.className = "";
+            
+            // Drop modal from the DOM completely
             logoutModal.remove();
         };
 
