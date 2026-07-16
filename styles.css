@@ -981,7 +981,7 @@ img {
 /* Modal */
 /* Modal backdrop overlay */
 .modal {
-  display: none; /* Hidden by default */
+  display: flex; /* Changed from 'none' to 'flex' so it displays instantly when injected */
   position: fixed;
   top: 0;
   left: 0;
@@ -993,10 +993,7 @@ img {
   z-index: 1000;
 }
 
-/* Show class to toggle visibility */
-.modal.active {
-  display: flex;
-}
+/* Note: The ".modal.active" styles have been deleted because they are no longer needed! */
 
 /* Modal box */
 .modal-content {
