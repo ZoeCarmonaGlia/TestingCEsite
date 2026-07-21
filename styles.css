@@ -32,6 +32,7 @@ img {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
+/* Your original base styles */
 .navbar {
   max-width: 1200px;
   margin: auto;
@@ -39,6 +40,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative; /* Needed for positioning mobile menu */
 }
 
 .logo {
@@ -51,8 +53,11 @@ img {
 
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 28px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -86,6 +91,97 @@ img {
   border: none;
   font-size: 28px;
   cursor: pointer;
+  color: #14213d;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropbtn {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  color: #14213d;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown:hover .dropbtn {
+  color: #CA8FFA;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 8px 0;
+  z-index: 100;
+}
+
+.dropdown-content a {
+  color: #14213d;
+  padding: 10px 18px;
+  display: block;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f5f0ff;
+  color: #760ACC;
+}
+
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block; /* Show hamburger button on small screens */
+  }
+
+  .nav-links {
+    display: none; /* Hide main links by default */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.05);
+    padding: 20px 0;
+    gap: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+    border-radius: 0;
+  }
+
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
 }
 
 .hero {

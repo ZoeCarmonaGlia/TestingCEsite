@@ -13,27 +13,42 @@
     <title>CE Testing Site</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
     <header class="header">
-      <nav class="navbar">
-        <div class="logo">
-          <img src="images/favicon.ico" alt="Bank logo">
-          <p class="tag">CE Glia Bank</p>
-        </div>
+      <nav class="navbar" id="myNavbar">
+  <!-- Logo section -->
+  <div class="logo">
+    <img src="images/favicon.ico" alt="Bank logo">
+    <p class="tag">CE Glia Bank</p>
+  </div>
 
-        <button class="menu-btn" id="menuBtn">☰</button>
+  <!-- Links Container -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#services" class="active">Services</a></li>
+    <li><a href="#cards">Cards</a></li>
+    <li><a href="#feedback">Feedback</a></li>
+    <li class="dropdown">
+      <button class="dropbtn">Exercises 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#link1">Link 1</a>
+        <a href="#link2">Link 2</a>
+        <a href="#link3">Link 3</a>
+      </div>
+    </li>
+  </ul>
 
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#cards">Cards</a></li>
-          <li><a href="#feedback">Feedback</a></li>
-        </ul>
+  <!-- Login Button -->
+  <a href="login.html" class="btn-login">Login</a>
 
-        <a href="login.html" class="btn-login">Login</a>
-      </nav>
+  <!-- Hamburger Icon for Mobile -->
+  <button class="menu-btn" id="menuBtn" onclick="myFunction()">&#9776;</button>
+</nav>
     </header>
 
     <main>
