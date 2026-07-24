@@ -1,5 +1,31 @@
 // ==========================================
-// 1. LOGIN FORM LOGIC (Unchanged)
+// Custom Glia Bubble Image 
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Crear el elemento de imagen
+    const gliaButton = document.createElement('img');
+    
+    // 2. Configurar sus atributos
+    gliaButton.id = 'custom-glia-button';
+    gliaButton.src = 'images/digitalAcc.png'; // Ruta de tu imagen
+    gliaButton.alt = 'Contact Support';
+    gliaButton.setAttribute('data-sm-show-media-selection-on', 'click');
+    
+    // 3. Aplicar los estilos flotantes (CSS)
+    gliaButton.style.position = 'fixed';
+    gliaButton.style.bottom = '20px';
+    gliaButton.style.right = '20px';
+    gliaButton.style.zIndex = '99999';
+    gliaButton.style.cursor = 'pointer';
+    gliaButton.style.width = '60px';
+    gliaButton.style.height = '60px';
+
+    // 4. Insertar la imagen en el <body> de la página
+    document.body.appendChild(gliaButton);
+});
+
+// ==========================================
+// 1. LOGIN FORM LOGIC 
 // ==========================================
 const loginForm = document.getElementById("loginForm");
 const errorMessage = document.getElementById("errorMessage");
@@ -24,7 +50,6 @@ if (loginForm) {
         }
     });
 }
-
 // ==========================================
 // 2. DASHBOARD LOGOUT MODAL (Dynamic Creation with Body Class)
 // ==========================================
